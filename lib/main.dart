@@ -1,9 +1,8 @@
+import 'package:color_generator/di.dart';
 import 'package:color_generator/ui/bloc/home_bloc.dart';
 import 'package:color_generator/ui/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'di.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

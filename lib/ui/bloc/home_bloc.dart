@@ -9,9 +9,9 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeInitial(color: Color.fromRGBO(255, 255, 255, 1))) {
+  HomeBloc() : super(const HomeInitial(color: Color.fromRGBO(255, 255, 255, 1))) {
     on<OnColorGenerateEvent>((event, emit) {
-      var randomColor = Color.fromRGBO(
+      final randomColor = Color.fromRGBO(
           Random().nextInt(256),
           Random().nextInt(256),
           Random().nextInt(256), 1
