@@ -1,3 +1,3 @@
 # color_generator
 
-Flutter project using GetX
+Flutter project using BloC
