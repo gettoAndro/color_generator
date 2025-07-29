@@ -1,12 +1,10 @@
 part of 'home_bloc.dart';
 
 @immutable
-sealed class HomeState {
-  final Color? color;
+class HomeState {
+  final Color color;
 
-  const HomeState({required this.color});
-}
+  const HomeState({this.color = const Color.fromRGBO(255, 255, 255, 1)});
 
-final class HomeInitial extends HomeState {
-  const HomeInitial({required super.color});
+  HomeState copyWith({Color? color}) => HomeState(color: color ?? this.color);
 }

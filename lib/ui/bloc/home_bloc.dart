@@ -8,15 +8,18 @@ part 'home_event.dart';
 
 part 'home_state.dart';
 
+const _maxColorValue = 256;
+
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(const HomeInitial(color: Color.fromRGBO(255, 255, 255, 1))) {
+
+  HomeBloc() : super(const HomeState()) {
     on<OnColorGenerateEvent>((event, emit) {
+      final random = Random();
       final randomColor = Color.fromRGBO(
-          Random().nextInt(256),
-          Random().nextInt(256),
-          Random().nextInt(256), 1
-      );
-      emit(HomeInitial(color: randomColor));
+          random.nextInt(_maxColorValue),
+          random.nextInt(_maxColorValue),
+          random.nextInt(_maxColorValue), 1);
+      emit(state.copyWith(color: randomColor));
     });
   }
 }
